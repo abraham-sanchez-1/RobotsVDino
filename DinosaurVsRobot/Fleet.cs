@@ -8,7 +8,7 @@ namespace DinosaurVsRobot
 {
     class Fleet
     {
-        List<Robot> Robots;
+        public List<Robot> Robots;
         Weapon sword = new Weapon("melee", 10);
         Weapon bat = new Weapon("melee", 5);
         Weapon glock = new Weapon("range", 20);

@@ -9,7 +9,7 @@ namespace DinosaurVsRobot
     class Herd
     {
         //member variable
-        List<Dinosaur> Dinos;
+        public List<Dinosaur> Dinos;
 
         //constructor
         public Herd()

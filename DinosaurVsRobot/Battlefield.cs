@@ -22,10 +22,13 @@ namespace DinosaurVsRobot
         //member methods
         public void GameRun()
         {
+            Battlefield newGame = new Battlefield();
             //display welcome message
             DisplayWelcome();
+            //introduce robot names
+            RobotNameIntros();
             //Next tool to add down the road is ability to add weapon on your own, take a look at stuff David gave you
-            //GamePlay();
+            GamePlay();
             //end game notice
 
             
@@ -36,19 +39,68 @@ namespace DinosaurVsRobot
         {
             Console.WriteLine("Welcome to DINO VS ROBOT 3000!\nYou are on the robot team, good luck!");
         }
+        //introduces names of robots to player
+        public void RobotNameIntros()
+        {
+            Console.WriteLine("You are in control of the following robots!");
+            Console.WriteLine(fleet.Robots[0].name);
+            Console.WriteLine(fleet.Robots[1].name);
+            Console.WriteLine(fleet.Robots[2].name);
+        }
         public void GamePlay()
         {
-            while(herd.HerdAlive() && fleet.FleetAlive())
+
+            while (herd.HerdAlive() && fleet.FleetAlive())
             {
                 Console.WriteLine("The robots commence an attack");
-                for (int i = 0; i < ; i++)
+                if (fleet.Robots[0].isInWorkingOrder)
                 {
-                    if (true)
+                    if (herd.Dinos[0].isAlive)
                     {
-
+                        fleet.Robots[0].Attack(herd.Dinos[0]);
+                    }
+                    else if (herd.Dinos[1].isAlive)
+                    {
+                        fleet.Robots[0].Attack(herd.Dinos[1]);
+                    }
+                    else if (herd.Dinos[2].isAlive)
+                    {
+                        fleet.Robots[0].Attack(herd.Dinos[2]);
                     }
                 }
-                
+                if (fleet.Robots[1].isInWorkingOrder)
+                {
+                    if (herd.Dinos[0].isAlive)
+                    {
+                        fleet.Robots[1].Attack(herd.Dinos[0]);
+                    }
+                    else if (herd.Dinos[1].isAlive)
+                    {
+                        fleet.Robots[1].Attack(herd.Dinos[1]);
+                    }
+                    else if (herd.Dinos[2].isAlive)
+                    {
+                        fleet.Robots[1].Attack(herd.Dinos[2]);
+                    }
+                }
+                if (fleet.Robots[2].isInWorkingOrder)
+                {
+                    if (herd.Dinos[0].isAlive)
+                    {
+                        fleet.Robots[2].Attack(herd.Dinos[0]);
+                    }
+                    else if (herd.Dinos[1].isAlive)
+                    {
+                        fleet.Robots[2].Attack(herd.Dinos[1]);
+                    }
+                    else if (herd.Dinos[2].isAlive)
+                    {
+                        fleet.Robots[2].Attack(herd.Dinos[2]);
+                    }
+                }
+                Console.WriteLine("Round Complete!");
+                //report out battlestats
+
             }
         }
     }
