@@ -27,5 +27,24 @@ namespace DinosaurVsRobot
             Robots.Add(new Robot("Billy-Bob", 50, 30, bat));
             Robots.Add(new Robot("Bobbert", 50, 30, glock));
         }
+        public bool FleetAlive()
+        {
+            int robotsAlive = 3;
+            for (int i = 0; i < Robots.Count; i++)
+            {
+                if (!Robots[i].isInWorkingOrder)
+                {
+                    robotsAlive--;
+                }
+            }
+            if (robotsAlive > 0)
+            {
+                return true;
+            }
+            else
+            { 
+                return false; 
+            }
+        }
     }
 }

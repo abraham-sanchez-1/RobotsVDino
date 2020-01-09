@@ -34,13 +34,21 @@ namespace DinosaurVsRobot
         }
         public void DisplayWelcome()
         {
-            Console.WriteLine("You are an amazing inventor and you have just created a timetravel machine.\nYou are unsure as to whether or not it works but you enter with your loyal robots to test it.\nThe machine transports you back 65 million years and drops you off in a dense jungle.\nThe Timemachine is nowhere to be found and you see leaves ruslting in the distance.\nThree dinasaurs quickly approach, you must now fight to survive!");
+            Console.WriteLine("Welcome to DINO VS ROBOT 3000!\nYou are on the robot team, good luck!");
         }
         public void GamePlay()
         {
-            while()
+            while(herd.HerdAlive() && fleet.FleetAlive())
             {
+                Console.WriteLine("The robots commence an attack");
+                for (int i = 0; i < ; i++)
+                {
+                    if (true)
+                    {
 
+                    }
+                }
+                
             }
         }
     }

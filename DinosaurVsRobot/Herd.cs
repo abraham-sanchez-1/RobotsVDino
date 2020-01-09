@@ -27,7 +27,24 @@ namespace DinosaurVsRobot
         }
         public bool HerdAlive()
         {
-            return true;
+            int dinosaursAlive = 3;
+            for (int i = 0; i < Dinos.Count; i++)
+            {
+                if (!Dinos[i].isAlive)
+                {
+                    dinosaursAlive--;
+                }
+            }
+            if (dinosaursAlive > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+
     }
 }
