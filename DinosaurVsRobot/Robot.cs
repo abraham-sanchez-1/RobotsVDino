@@ -25,20 +25,16 @@ namespace DinosaurVsRobot
             isInWorkingOrder = true;
         }
         //member method
-        public void Attack(Dinosaur dinosaur, Robot robot)
+        public void Attack(Dinosaur dinosaur)
         {
             Console.WriteLine("Robot " + name + " will attack for " + (powerLevel + weapon.attackPower) + " total points!");
-            dinosaur.health -= ((robot.powerLevel) + (robot.weapon.attackPower));
+            dinosaur.health -= ((powerLevel) + (weapon.attackPower));
             Console.WriteLine(dinosaur.type + " is now at " + dinosaur.health + " health points!");
             if(dinosaur.health <= 0)
             {
                 isInWorkingOrder = false;
                 Console.WriteLine(dinosaur.type + "has been KNOCKED OUT!!!");
             }
-        }
-        public void ChooseWeaponType()
-        {
-
         }
 
     }
