@@ -27,7 +27,7 @@ namespace DinosaurVsRobot
         //member method
         public void Attack(Dinosaur dinosaur) //chance now works as intended
         {
-            Console.WriteLine("Robot " + name + " will attack " + dinosaur.type );
+            Console.WriteLine("Robot " + name + " will attack " + dinosaur.type + " with " + weapon.type);
             int finalAttack;
             int randomNumber;
             //instantiate random

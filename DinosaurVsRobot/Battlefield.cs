@@ -66,7 +66,7 @@ namespace DinosaurVsRobot
             {
                 if(herd.HerdAlive())
                 {
-                    Console.WriteLine("You're on your knees holding onto the bits and pieces left of the robot...\nDinosaurs completely surround you\nGAME OVER");
+                    Console.WriteLine("You're on your knees holding onto the bits and pieces left of the robots...\nDinosaurs completely surround you\nGAME OVER");
                 }
                 else if(fleet.FleetAlive())
                 {
@@ -135,6 +135,8 @@ namespace DinosaurVsRobot
                     fleet.Robots[2].Attack(herd.Dinos[2]);
                 }
             }
+            Console.WriteLine("Click any key to continue");
+            Console.ReadLine();
         }
         public void DinosAttackRound()
         {
@@ -186,15 +188,17 @@ namespace DinosaurVsRobot
                     herd.Dinos[2].Attack(fleet.Robots[2]);
                 }
             }
+            Console.WriteLine("Click any key to continue");
+            Console.ReadLine();
         }
         public void GiveRobotWeapon()
         {
             for (int i = 0; i < fleet.Robots.Count; i++)
             {
                 //weapon instantiation for purpose of selection
-                Weapon sword = new Weapon("melee", 10);
-                Weapon bat = new Weapon("melee", 5);
-                Weapon glock = new Weapon("range", 20);
+                Weapon sword = new Weapon("sword", 10);
+                Weapon bat = new Weapon("bat", 5);
+                Weapon glock = new Weapon("glock", 20);
 
                 Console.WriteLine("You will now select the weapon for robot " + fleet.Robots[i].name + ":");
                 Console.WriteLine("1) Sword\n2) Bat\n3) Glock");
