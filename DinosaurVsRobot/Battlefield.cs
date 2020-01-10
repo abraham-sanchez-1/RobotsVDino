@@ -37,7 +37,7 @@ namespace DinosaurVsRobot
         }
         public void DisplayWelcome()
         {
-            Console.WriteLine("Welcome to DINO VS ROBOT 3000!\nYou are on the robot team, good luck!");
+            Console.WriteLine("Welcome to DINO VS ROBOT 3000!\nYou are on the robot team, good luck!\n\n");
         }
         //introduces names of robots to player
         public void RobotNameIntros()
@@ -46,6 +46,7 @@ namespace DinosaurVsRobot
             Console.WriteLine(fleet.Robots[0].name);
             Console.WriteLine(fleet.Robots[1].name);
             Console.WriteLine(fleet.Robots[2].name);
+            Console.WriteLine("\n");
         }
         public void GamePlay()
         {
@@ -148,6 +149,14 @@ namespace DinosaurVsRobot
                     }
                 }
                 Console.WriteLine("Round Complete!");
+                fleet.Robots[0].ReportBotStats();
+                fleet.Robots[1].ReportBotStats();
+                fleet.Robots[2].ReportBotStats();
+                Console.WriteLine("Dinosaur stats");
+                herd.Dinos[0].ReportDinoStats();
+                herd.Dinos[1].ReportDinoStats();
+                herd.Dinos[2].ReportDinoStats();
+
                 //report out battlestats
 
             }

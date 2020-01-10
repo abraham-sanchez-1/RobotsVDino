@@ -36,6 +36,14 @@ namespace DinosaurVsRobot
                 Console.WriteLine(dinosaur.type + " has been KNOCKED OUT!!!");
             }
         }
+        public void ReportBotStats()
+        {
+            if(isInWorkingOrder)
+            {
+                Console.WriteLine(name + " is alive!\nCurrent health is at: " + health);
+            }
+
+        }
 
     }
 }
