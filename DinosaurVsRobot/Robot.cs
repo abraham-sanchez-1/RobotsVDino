@@ -32,8 +32,8 @@ namespace DinosaurVsRobot
             Console.WriteLine(dinosaur.type + " is now at " + dinosaur.health + " health points!");
             if(dinosaur.health <= 0)
             {
-                isInWorkingOrder = false;
-                Console.WriteLine(dinosaur.type + "has been KNOCKED OUT!!!");
+                dinosaur.isAlive = false;
+                Console.WriteLine(dinosaur.type + " has been KNOCKED OUT!!!");
             }
         }
 

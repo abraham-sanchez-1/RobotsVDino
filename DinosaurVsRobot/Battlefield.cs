@@ -52,6 +52,7 @@ namespace DinosaurVsRobot
 
             while (herd.HerdAlive() && fleet.FleetAlive())
             {
+                //Robot attack
                 Console.WriteLine("The robots commence an attack");
                 if (fleet.Robots[0].isInWorkingOrder)
                 {
@@ -96,6 +97,54 @@ namespace DinosaurVsRobot
                     else if (herd.Dinos[2].isAlive)
                     {
                         fleet.Robots[2].Attack(herd.Dinos[2]);
+                    }
+                }
+                //Dinosaurs attack
+                Console.WriteLine("The Dinosaurs commence an attack");
+                if (herd.Dinos[0].isAlive)
+                {
+                    if (fleet.Robots[0].isInWorkingOrder)
+                    {
+                        herd.Dinos[0].Attack(fleet.Robots[0]);
+                    
+                    }
+                    else if (fleet.Robots[1].isInWorkingOrder)
+                    {
+                        herd.Dinos[0].Attack(fleet.Robots[1]);
+                    }
+                    else if (fleet.Robots[2].isInWorkingOrder)
+                    {
+                        herd.Dinos[0].Attack(fleet.Robots[2]);
+                    }
+                }
+                if (herd.Dinos[1].isAlive)
+                {
+                    if (fleet.Robots[0].isInWorkingOrder)
+                    {
+                        herd.Dinos[1].Attack(fleet.Robots[0]);
+                    }
+                    else if (fleet.Robots[1].isInWorkingOrder)
+                    {
+                        herd.Dinos[1].Attack(fleet.Robots[1]);
+                    }
+                    else if (fleet.Robots[2].isInWorkingOrder)
+                    {
+                        herd.Dinos[1].Attack(fleet.Robots[2]);
+                    }
+                }
+                if (herd.Dinos[2].isAlive)
+                {
+                    if (fleet.Robots[0].isInWorkingOrder)
+                    {
+                        herd.Dinos[2].Attack(fleet.Robots[0]);
+                    }
+                    else if (fleet.Robots[1].isInWorkingOrder)
+                    {
+                        herd.Dinos[2].Attack(fleet.Robots[1]);
+                    }
+                    else if (fleet.Robots[2].isInWorkingOrder)
+                    {
+                        herd.Dinos[2].Attack(fleet.Robots[2]);
                     }
                 }
                 Console.WriteLine("Round Complete!");

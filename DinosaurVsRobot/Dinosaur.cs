@@ -32,9 +32,13 @@ namespace DinosaurVsRobot
             Console.WriteLine(robotTarget.name + " is now at " + robotTarget.health + " health points");
             if(robotTarget.health <= 0)
             {
-                isAlive = false;
+                robotTarget.isInWorkingOrder = false;
                 Console.WriteLine(robotTarget.name + " has been KNOCKED OUT!!!");
             }
+        }
+        public void ReportStats()
+        {
+
         }
     }
 }
