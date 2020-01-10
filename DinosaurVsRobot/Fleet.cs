@@ -24,7 +24,7 @@ namespace DinosaurVsRobot
         public void CreateFleet()
         {
             Robots.Add(new Robot("Assaultron", 200, 30, sword));
-            Robots.Add(new Robot("Billy-Bob", 50, 30, bat));
+            Robots.Add(new Robot("Liberty-Prime", 50, 30, bat));
             Robots.Add(new Robot("Sentry-bot", 50, 30, glock));
         }
         public bool FleetAlive()
@@ -46,13 +46,6 @@ namespace DinosaurVsRobot
                 return false; 
             }
         }
-        //public void ReportFleetStats()
-        //{
-        //    for (int i = 0; i < length; i++)
-        //    {
-
-        //    }
-
-        //}
+        
     }
 }

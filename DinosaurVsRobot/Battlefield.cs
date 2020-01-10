@@ -37,6 +37,8 @@ namespace DinosaurVsRobot
         public void DisplayWelcome()
         {
             Console.WriteLine("Welcome to DINO VS ROBOT 3000!\nYou are on the robot team, good luck!\n\n");
+            Console.WriteLine("Click any key to continue!");
+            Console.ReadLine();
         }
         //introduces names of robots to player
         public void RobotNameIntros()
