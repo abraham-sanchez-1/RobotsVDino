@@ -210,7 +210,7 @@ namespace DinosaurVsRobot
                         fleet.Robots[i].weapon = bat;
                         break;
                     case 3:
-                        Console.WriteLine("Ah yes...the mighty glock!"\n);
+                        Console.WriteLine("Ah yes...the mighty glock!\n");
                         fleet.Robots[i].weapon = glock;
                         break;
                     default:
