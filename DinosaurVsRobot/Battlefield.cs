@@ -30,6 +30,7 @@ namespace DinosaurVsRobot
             //Next tool to add down the road is ability to add weapon on your own, take a look at stuff David gave you
             GamePlay();
             //end game notice
+            GameOver();
 
             
 
@@ -160,6 +161,21 @@ namespace DinosaurVsRobot
                 //report out battlestats
 
             }
+        }
+        public void GameOver()
+        {
+            if (herd.HerdAlive() || fleet.FleetAlive())
+            {
+                if(herd.HerdAlive())
+                {
+                    Console.WriteLine("You were decimated by the Dinosaurs...\nYOU HAD ROBOTS???\nHOW COULD YOU LOSE???\n\n\nWeaksauce");
+                }
+                else if(fleet.FleetAlive())
+                {
+                    Console.WriteLine("You not only decimated the immediate dinos that we're threatning you but also went out to cause the extinction of all dinosaurs.\nCongrats you monster!!!");
+                }
+            }
+
         }
     }
     

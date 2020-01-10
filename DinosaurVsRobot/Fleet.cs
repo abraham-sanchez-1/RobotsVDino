@@ -46,13 +46,13 @@ namespace DinosaurVsRobot
                 return false; 
             }
         }
-        public void ReportFleetStats()
-        {
-            for (int i = 0; i < length; i++)
-            {
+        //public void ReportFleetStats()
+        //{
+        //    for (int i = 0; i < length; i++)
+        //    {
 
-            }
+        //    }
 
-        }
+        //}
     }
 }
