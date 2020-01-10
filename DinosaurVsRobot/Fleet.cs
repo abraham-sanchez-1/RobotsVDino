@@ -23,9 +23,9 @@ namespace DinosaurVsRobot
         //member method
         public void CreateFleet()
         {
-            Robots.Add(new Robot("Bobby", 200, 30, sword));
+            Robots.Add(new Robot("Assaultron", 200, 30, sword));
             Robots.Add(new Robot("Billy-Bob", 50, 30, bat));
-            Robots.Add(new Robot("Bobbert", 50, 30, glock));
+            Robots.Add(new Robot("Sentry-bot", 50, 30, glock));
         }
         public bool FleetAlive()
         {

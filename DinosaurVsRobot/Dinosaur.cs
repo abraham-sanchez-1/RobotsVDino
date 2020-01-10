@@ -25,7 +25,7 @@ namespace DinosaurVsRobot
             isAlive = true;
         }
         //member method
-        public void Attack(Robot robotTarget)
+        public void Attack(Robot robotTarget) //chance now works as intended
         {
             Console.WriteLine("Dinosaur " + type + " will attack " + robotTarget.name);
             int finalAttack;
@@ -38,23 +38,23 @@ namespace DinosaurVsRobot
                 finalAttack = randomNumber * attackPower;
                 robotTarget.health -= finalAttack;
                 Console.WriteLine("The attack was effective!\nDamage output was " + finalAttack);
-                Console.WriteLine(robotTarget.name + " is now at " + robotTarget.health + " health points");
+                Console.WriteLine(robotTarget.name + " is now at " + robotTarget.health + " health points\n");
                 if (robotTarget.health <= 0)
                 {
                     robotTarget.isInWorkingOrder = false;
-                    Console.WriteLine(robotTarget.name + " has been KNOCKED OUT!!!");
+                    Console.WriteLine(robotTarget.name + " has been KNOCKED OUT!!!\n");
                 }
             }
             else
             {
-                Console.WriteLine(type + " missed!");
+                Console.WriteLine(type + " missed!\n");
             }
         }
         public void ReportDinoStats()
         {
             if (isAlive)
             {
-                Console.WriteLine(type + " is alive!\nCurrent health is: " + health);
+                Console.WriteLine(type + " is alive!\nCurrent health is: " + health+ "\n");
             }
             
         }

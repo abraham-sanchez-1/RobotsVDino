@@ -27,7 +27,8 @@ namespace DinosaurVsRobot
             DisplayWelcome();
             //introduce robot names
             RobotNameIntros();
-            //Next tool to add down the road is ability to add weapon on your own, take a look at stuff David gave you
+            //Intro for dinos
+            GiveRobotWeapon();
             GamePlay();
             //end game notice
             GameOver();
@@ -51,112 +52,12 @@ namespace DinosaurVsRobot
 
             while (herd.HerdAlive() && fleet.FleetAlive())
             {
-                //Robot attack
-                Console.WriteLine("The robots commence an attack");
-                if (fleet.Robots[0].isInWorkingOrder)
-                {
-                    if (herd.Dinos[0].isAlive)
-                    {
-                        fleet.Robots[0].Attack(herd.Dinos[0]);
-                    }
-                    else if (herd.Dinos[1].isAlive)
-                    {
-                        fleet.Robots[0].Attack(herd.Dinos[1]);
-                    }
-                    else if (herd.Dinos[2].isAlive)
-                    {
-                        fleet.Robots[0].Attack(herd.Dinos[2]);
-                    }
-                }
-                if (fleet.Robots[1].isInWorkingOrder)
-                {
-                    if (herd.Dinos[0].isAlive)
-                    {
-                        fleet.Robots[1].Attack(herd.Dinos[0]);
-                    }
-                    else if (herd.Dinos[1].isAlive)
-                    {
-                        fleet.Robots[1].Attack(herd.Dinos[1]);
-                    }
-                    else if (herd.Dinos[2].isAlive)
-                    {
-                        fleet.Robots[1].Attack(herd.Dinos[2]);
-                    }
-                }
-                if (fleet.Robots[2].isInWorkingOrder)
-                {
-                    if (herd.Dinos[0].isAlive)
-                    {
-                        fleet.Robots[2].Attack(herd.Dinos[0]);
-                    }
-                    else if (herd.Dinos[1].isAlive)
-                    {
-                        fleet.Robots[2].Attack(herd.Dinos[1]);
-                    }
-                    else if (herd.Dinos[2].isAlive)
-                    {
-                        fleet.Robots[2].Attack(herd.Dinos[2]);
-                    }
-                }
-                //Dinosaurs attack
-                Console.WriteLine("The Dinosaurs commence an attack");
-                if (herd.Dinos[0].isAlive)
-                {
-                    if (fleet.Robots[0].isInWorkingOrder)
-                    {
-                        herd.Dinos[0].Attack(fleet.Robots[0]);
-                    
-                    }
-                    else if (fleet.Robots[1].isInWorkingOrder)
-                    {
-                        herd.Dinos[0].Attack(fleet.Robots[1]);
-                    }
-                    else if (fleet.Robots[2].isInWorkingOrder)
-                    {
-                        herd.Dinos[0].Attack(fleet.Robots[2]);
-                    }
-                }
-                if (herd.Dinos[1].isAlive)
-                {
-                    if (fleet.Robots[0].isInWorkingOrder)
-                    {
-                        herd.Dinos[1].Attack(fleet.Robots[0]);
-                    }
-                    else if (fleet.Robots[1].isInWorkingOrder)
-                    {
-                        herd.Dinos[1].Attack(fleet.Robots[1]);
-                    }
-                    else if (fleet.Robots[2].isInWorkingOrder)
-                    {
-                        herd.Dinos[1].Attack(fleet.Robots[2]);
-                    }
-                }
-                if (herd.Dinos[2].isAlive)
-                {
-                    if (fleet.Robots[0].isInWorkingOrder)
-                    {
-                        herd.Dinos[2].Attack(fleet.Robots[0]);
-                    }
-                    else if (fleet.Robots[1].isInWorkingOrder)
-                    {
-                        herd.Dinos[2].Attack(fleet.Robots[1]);
-                    }
-                    else if (fleet.Robots[2].isInWorkingOrder)
-                    {
-                        herd.Dinos[2].Attack(fleet.Robots[2]);
-                    }
-                }
-                Console.WriteLine("Round Complete!");
-                fleet.Robots[0].ReportBotStats();
-                fleet.Robots[1].ReportBotStats();
-                fleet.Robots[2].ReportBotStats();
-                Console.WriteLine("Dinosaur stats");
-                herd.Dinos[0].ReportDinoStats();
-                herd.Dinos[1].ReportDinoStats();
-                herd.Dinos[2].ReportDinoStats();
+                RobotAttackRound();
+                //select target
+                DinosAttackRound();
+                RoundStats();
 
-                //report out battlestats
-
+                
             }
         }
         public void GameOver()
@@ -165,7 +66,7 @@ namespace DinosaurVsRobot
             {
                 if(herd.HerdAlive())
                 {
-                    Console.WriteLine("You were decimated by the Dinosaurs...\nYOU HAD ROBOTS???\nHOW COULD YOU LOSE???\n\n\nWeaksauce");
+                    Console.WriteLine("You're on your knees holding onto the bits and pieces left of the robot...\nDinosaurs completely surround you\nGAME OVER");
                 }
                 else if(fleet.FleetAlive())
                 {
@@ -173,6 +74,153 @@ namespace DinosaurVsRobot
                 }
             }
 
+        }
+        public void RoundStats()
+        {
+            Console.WriteLine("Round Complete!");
+            fleet.Robots[0].ReportBotStats();
+            fleet.Robots[1].ReportBotStats();
+            fleet.Robots[2].ReportBotStats();
+            Console.WriteLine("Dinosaur stats");
+            herd.Dinos[0].ReportDinoStats();
+            herd.Dinos[1].ReportDinoStats();
+            herd.Dinos[2].ReportDinoStats();
+        }
+        public void RobotAttackRound()
+        {
+            //Robot attack
+            Console.WriteLine("The robots commence an attack");
+            if (fleet.Robots[0].isInWorkingOrder)
+            {
+                if (herd.Dinos[0].isAlive)
+                {
+                    fleet.Robots[0].Attack(herd.Dinos[0]);
+                }
+                else if (herd.Dinos[1].isAlive)
+                {
+                    fleet.Robots[0].Attack(herd.Dinos[1]);
+                }
+                else if (herd.Dinos[2].isAlive)
+                {
+                    fleet.Robots[0].Attack(herd.Dinos[2]);
+                }
+            }
+            else if (fleet.Robots[1].isInWorkingOrder)
+            {
+                if (herd.Dinos[0].isAlive)
+                {
+                    fleet.Robots[1].Attack(herd.Dinos[0]);
+                }
+                else if (herd.Dinos[1].isAlive)
+                {
+                    fleet.Robots[1].Attack(herd.Dinos[1]);
+                }
+                else if (herd.Dinos[2].isAlive)
+                {
+                    fleet.Robots[1].Attack(herd.Dinos[2]);
+                }
+            }
+            else if (fleet.Robots[2].isInWorkingOrder)
+            {
+                if (herd.Dinos[0].isAlive)
+                {
+                    fleet.Robots[2].Attack(herd.Dinos[0]);
+                }
+                else if (herd.Dinos[1].isAlive)
+                {
+                    fleet.Robots[2].Attack(herd.Dinos[1]);
+                }
+                else if (herd.Dinos[2].isAlive)
+                {
+                    fleet.Robots[2].Attack(herd.Dinos[2]);
+                }
+            }
+        }
+        public void DinosAttackRound()
+        {
+            //Dinosaurs attack
+            Console.WriteLine("The Dinosaurs commence an attack");
+            if (herd.Dinos[0].isAlive)
+            {
+                if (fleet.Robots[0].isInWorkingOrder)
+                {
+                    herd.Dinos[0].Attack(fleet.Robots[0]);
+
+                }
+                else if (fleet.Robots[1].isInWorkingOrder)
+                {
+                    herd.Dinos[0].Attack(fleet.Robots[1]);
+                }
+                else if (fleet.Robots[2].isInWorkingOrder)
+                {
+                    herd.Dinos[0].Attack(fleet.Robots[2]);
+                }
+            }
+            else if (herd.Dinos[1].isAlive)
+            {
+                if (fleet.Robots[0].isInWorkingOrder)
+                {
+                    herd.Dinos[1].Attack(fleet.Robots[0]);
+                }
+                else if (fleet.Robots[1].isInWorkingOrder)
+                {
+                    herd.Dinos[1].Attack(fleet.Robots[1]);
+                }
+                else if (fleet.Robots[2].isInWorkingOrder)
+                {
+                    herd.Dinos[1].Attack(fleet.Robots[2]);
+                }
+            }
+            else if (herd.Dinos[2].isAlive)
+            {
+                if (fleet.Robots[0].isInWorkingOrder)
+                {
+                    herd.Dinos[2].Attack(fleet.Robots[0]);
+                }
+                else if (fleet.Robots[1].isInWorkingOrder)
+                {
+                    herd.Dinos[2].Attack(fleet.Robots[1]);
+                }
+                else if (fleet.Robots[2].isInWorkingOrder)
+                {
+                    herd.Dinos[2].Attack(fleet.Robots[2]);
+                }
+            }
+        }
+        public void GiveRobotWeapon()
+        {
+            for (int i = 0; i < fleet.Robots.Count; i++)
+            {
+                //weapon instantiation for purpose of selection
+                Weapon sword = new Weapon("melee", 10);
+                Weapon bat = new Weapon("melee", 5);
+                Weapon glock = new Weapon("range", 20);
+
+                Console.WriteLine("You will now select the weapon for robot " + fleet.Robots[i].name + ":");
+                Console.WriteLine("1) Sword\n2) Bat\n3) Glock");
+                int input = int.Parse(Console.ReadLine());
+                switch (input)
+                {
+                    case 1:
+                        Console.WriteLine("A sword?\nTrusty and reliable!\n");
+                        fleet.Robots[i].weapon = sword;
+                        break;
+                    case 2:
+                        Console.WriteLine("A bat?\nHow did you even get that here?\n");
+                        fleet.Robots[i].weapon = bat;
+                        break;
+                    case 3:
+                        Console.WriteLine("Ah yes...the mighty glock!"\n);
+                        fleet.Robots[i].weapon = glock;
+                        break;
+                    default:
+                        Console.WriteLine("Your selection did not meet the required inputs (you can only select a number between 1-3)\nStarting selection over.");
+                        GiveRobotWeapon();
+                        break;
+
+                }
+                
+            }
         }
     }
     
