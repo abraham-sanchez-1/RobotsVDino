@@ -21,9 +21,9 @@ namespace DinosaurVsRobot
         //member method
         public void CreateHerd()
         {
-            Dinos.Add(new Dinosaur("T-Rex", 100, 50, 75));
-            Dinos.Add(new Dinosaur("Velociraptor", 30, 100, 15));
-            Dinos.Add(new Dinosaur("Triceratops", 70, 65, 40));
+            Dinos.Add(new Dinosaur("T-Rex", 200, 50, 75));
+            Dinos.Add(new Dinosaur("Velociraptor", 60, 100, 15));
+            Dinos.Add(new Dinosaur("Triceratops", 100, 65, 40));
         }
         public bool HerdAlive()
         {

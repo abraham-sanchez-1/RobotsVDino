@@ -32,9 +32,6 @@ namespace DinosaurVsRobot
             //end game notice
             GameOver();
 
-            
-
-
         }
         public void DisplayWelcome()
         {

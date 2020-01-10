@@ -27,13 +27,28 @@ namespace DinosaurVsRobot
         //member method
         public void Attack(Dinosaur dinosaur)
         {
-            Console.WriteLine("Robot " + name + " will attack for " + (powerLevel + weapon.attackPower) + " total points!");
-            dinosaur.health -= ((powerLevel) + (weapon.attackPower));
-            Console.WriteLine(dinosaur.type + " is now at " + dinosaur.health + " health points!");
-            if(dinosaur.health <= 0)
+            Console.WriteLine("Robot " + name + " will attack " + dinosaur.type );
+            int finalAttack;
+            int randomNumber;
+            //instantiate random
+            Random random = new Random();
+            randomNumber = random.Next(0, 3);
+            if (randomNumber != 0)
             {
-                dinosaur.isAlive = false;
-                Console.WriteLine(dinosaur.type + " has been KNOCKED OUT!!!");
+                finalAttack = (weapon.attackPower + powerLevel) * randomNumber;
+
+                dinosaur.health -= finalAttack;
+                Console.WriteLine("The attack was effective!\nDamage output was " + finalAttack);
+                Console.WriteLine(dinosaur.type + " is now at " + dinosaur.health + " health points!");
+                if (dinosaur.health <= 0)
+                {
+                    dinosaur.isAlive = false;
+                    Console.WriteLine(dinosaur.type + " has been KNOCKED OUT!!!");
+                }
+            }
+            else
+            {
+               Console.WriteLine(name + " missed!");
             }
         }
         public void ReportBotStats()
