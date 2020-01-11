@@ -37,10 +37,9 @@ namespace DinosaurVsRobot
         public void DisplayWelcome()
         {
             Console.WriteLine("Welcome to DINO VS ROBOT 3000!\nYou are on the robot team, good luck!\n\n");
-            Console.WriteLine("Click any key to continue!");
+            Console.WriteLine("Click any key to continue");
             Console.ReadLine();
         }
-        //introduces names of robots to player
         public void RobotNameIntros()
         {
             Console.WriteLine("You are in control of the following robots!");
@@ -48,6 +47,8 @@ namespace DinosaurVsRobot
             Console.WriteLine(fleet.Robots[1].name);
             Console.WriteLine(fleet.Robots[2].name);
             Console.WriteLine("\n");
+            Console.WriteLine("Click any key to continue");
+            Console.ReadLine();
         }
         public void GamePlay()
         {
@@ -137,8 +138,6 @@ namespace DinosaurVsRobot
                     fleet.Robots[2].Attack(herd.Dinos[2]);
                 }
             }
-            Console.WriteLine("Click any key to continue");
-            Console.ReadLine();
         }
         public void DinosAttackRound()
         {
@@ -190,8 +189,6 @@ namespace DinosaurVsRobot
                     herd.Dinos[2].Attack(fleet.Robots[2]);
                 }
             }
-            Console.WriteLine("Click any key to continue");
-            Console.ReadLine();
         }
         public void GiveRobotWeapon()
         {
@@ -209,14 +206,20 @@ namespace DinosaurVsRobot
                 {
                     case 1:
                         Console.WriteLine("A sword?\nTrusty and reliable!\n");
+                        Console.WriteLine("Click any key to continue");
+                        Console.ReadLine();
                         fleet.Robots[i].weapon = sword;
                         break;
                     case 2:
                         Console.WriteLine("A bat?\nHow did you even get that here?\n");
+                        Console.WriteLine("Click any key to continue");
+                        Console.ReadLine();
                         fleet.Robots[i].weapon = bat;
                         break;
                     case 3:
                         Console.WriteLine("Ah yes...the mighty glock!\n");
+                        Console.WriteLine("Click any key to continue");
+                        Console.ReadLine();
                         fleet.Robots[i].weapon = glock;
                         break;
                     default:

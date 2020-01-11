@@ -54,6 +54,8 @@ namespace DinosaurVsRobot
             {
                Console.WriteLine(name + " missed!\n");
             }
+            Console.WriteLine("Click any key to continue");
+            Console.ReadLine();
         }
         public void ReportBotStats()
         {
