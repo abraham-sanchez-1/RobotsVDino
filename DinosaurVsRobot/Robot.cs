@@ -38,6 +38,10 @@ namespace DinosaurVsRobot
                 finalAttack = (weapon.attackPower + powerLevel) * randomNumber;
 
                 dinosaur.health -= finalAttack;
+                if(dinosaur.health <= 0)
+                {
+                    dinosaur.health = 0;
+                }
                 Console.WriteLine("The attack was effective!\nDamage output was " + finalAttack);
                 Console.WriteLine(dinosaur.type + " is now at " + dinosaur.health + " health points!\n");
                 if (dinosaur.health <= 0)
