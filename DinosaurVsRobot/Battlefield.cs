@@ -117,7 +117,7 @@ namespace DinosaurVsRobot
         {
             int robotNumber = 0;
 
-            Console.WriteLine("Select dinosaur to attack:");
+            Console.WriteLine("Select robot to attack:");
             Console.WriteLine("1) Assaultron: Status " + IsRobotSelectedAlive(0));
             Console.WriteLine("2) Liberty-Prime: Status " + IsRobotSelectedAlive(1));
             Console.WriteLine("3) Sentry-Bot: Status " + IsRobotSelectedAlive(2));
@@ -173,7 +173,7 @@ namespace DinosaurVsRobot
         {
             int dinoNumber = 0;
 
-            Console.WriteLine("Select robot to complete attack:");
+            Console.WriteLine("Select dinosaur to complete attack:");
             Console.WriteLine("1) T-Rex: Status " + IsDinoSelectedAlive(0));
             Console.WriteLine("2) Velociraptor: Status " + IsDinoSelectedAlive(1));
             Console.WriteLine("3) Triceratops: Status " + IsDinoSelectedAlive(2));
