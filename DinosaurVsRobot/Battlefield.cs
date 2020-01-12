@@ -89,8 +89,64 @@ namespace DinosaurVsRobot
             herd.Dinos[1].ReportDinoStats();
             herd.Dinos[2].ReportDinoStats();
         }
+        public int SelectDinosaurToAttack()
+        {
+            int dinosaurNumber = 0;
+
+            Console.WriteLine("Select dinosaur to attack:\n1) T-Rex\n2) Velociraptor\n3) Triceratops");
+            int UserSelection = int.Parse(Console.ReadLine());
+
+            switch (UserSelection)
+            {
+                case 1:
+                    if (!herd.Dinos[1].isAlive)
+                    {
+                        Console.WriteLine(herd.Dinos[1].type + " is not alive.");
+                        SelectDinosaurToAttack();
+                    }
+                    else
+                    { 
+                        Console.WriteLine(herd.Dinos[1].type + " has been selected!");
+                        dinosaurNumber = 1;
+                    }
+                    break;
+                case 2:
+                    if (!herd.Dinos[2].isAlive)
+                    {
+                        Console.WriteLine(herd.Dinos[2].type + " is not alive.");
+                        SelectDinosaurToAttack();
+                    }
+                    else
+                    {
+                        Console.WriteLine(herd.Dinos[2].type + " has been selected!");
+                        dinosaurNumber = 2;
+                    }
+                    break;
+                case 3:
+                    
+                    if (!herd.Dinos[3].isAlive)
+                    {
+                        Console.WriteLine(herd.Dinos[3].type + " is not alive.");
+                        SelectDinosaurToAttack();
+                    }
+                    else
+                    {
+                        Console.WriteLine(herd.Dinos[3].type + " has been selected!");
+                        dinosaurNumber = 3;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Your selection was outside of 1-3, select again.");
+                    SelectDinosaurToAttack();
+                    break;
+                    
+            }
+            return dinosaurNumber;
+        }
         public void RobotAttackRound()
         {
+
+            //Robot attacks with choices
             //Robot attack
             Console.WriteLine("The robots commence an attack");
             if (fleet.Robots[0].isInWorkingOrder)
