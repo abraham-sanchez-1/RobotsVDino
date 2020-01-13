@@ -11,6 +11,7 @@ namespace DinosaurVsRobot
         //member variables
         Herd herd;
         Fleet fleet;
+        int round = 1;
 
         //constructor
         public Battlefield()
@@ -63,14 +64,17 @@ namespace DinosaurVsRobot
 
             while (herd.HerdAlive() && fleet.FleetAlive())
             {
+                
+                Console.WriteLine("ROUND " +  round );
                 RobotAttackDinoRound();
                 DinoAttackRobotRound();
+                Console.WriteLine("ROUND " + round + " END");
                 //RobotAttackRound();
                 //select target
                 //DinosAttackRound();
                 //RoundStats();
 
-                
+                round ++;
             }
         }
         public void GameOver()
